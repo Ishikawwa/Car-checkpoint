@@ -1,0 +1,114 @@
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.background-color {
+  background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+  height: 100vh;
+  position: relative;
+}
+
+.car {
+  width: 200px;
+  position: absolute;
+  bottom: 40px;
+  animation: drive 5s ease-in-out infinite;
+}
+
+.body {
+  height: 50px;
+  background-color: red;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.roof {
+  height: 30px;
+  width: 100px;
+  background-color: darkred;
+  border-radius: 10px;
+  position: absolute;
+  top: -20px;
+  left: 50px;
+}
+
+.windows {
+  position: absolute;
+  top: -15px;
+  left: 55px;
+  width: 90px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.headlight {
+  width: 10px;
+  height: 10px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+}
+
+.headlight.left {
+  left: -5px;
+}
+
+.headlight.right {
+  right: -5px;
+}
+
+.wheels {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 10px;
+}
+
+.wheel {
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.road {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 40px;
+  background-color: yellow;
+}
+
+@keyframes drive {
+  from {
+      left: -200px;
+  }
+  to {
+      left: calc(100vw - 50px - 200px);
+  }
+}
+</style>
+
+<body class="background-color">
+  <main class="car">
+      <section class="body"></section>
+      <section class="roof"></section>
+      <section class="windows"></section>
+      <div class="headlight left"></div>
+      <div class="headlight right"></div>
+      <div class="wheels">
+          <section class="wheel wheel-left"></section>
+          <section class="wheel wheel-right"></section>
+      </div>
+  </main>
+  <footer class="road"></footer>
+</body>
